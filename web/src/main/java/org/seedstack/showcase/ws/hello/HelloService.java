@@ -12,10 +12,10 @@ package org.seedstack.showcase.ws.hello;
 import javax.jws.WebService;
 import javax.xml.ws.BindingType;
 
+import org.seedstack.ws.hello.Hello;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.inetpsa.ws.hello.Hello;
 import com.sun.xml.ws.developer.SchemaValidation;
 
 @WebService(endpointInterface = "org.seedstack.ws.hello.Hello", targetNamespace = "http://seedstack.org/wsdl/seed/hello/", serviceName = "HelloService", portName = "HelloServicePort")
