@@ -26,7 +26,15 @@
     <listener>
         <listener-class>org.seedstack.seed.web.SeedServletContextListener</listener-class>
     </listener>
-    
+
+<!-- 	<resource-ref> -->
+<!-- 		<description>ecommerce ds</description> -->
+<!-- 		<res-ref-name>jdbc/fnd00_showcase_showcase_fnd00_ds</res-ref-name> -->
+<!-- 		<res-type>javax.sql.DataSource</res-type> -->
+<!-- 		<res-auth>Container</res-auth> -->
+<!-- 		<res-sharing-scope>Shareable</res-sharing-scope> -->
+<!-- 	</resource-ref> -->
+	
 </web-app>
 
 

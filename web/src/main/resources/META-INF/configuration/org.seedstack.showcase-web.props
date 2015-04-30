@@ -18,12 +18,24 @@
 # web-services
 ####################################################################
 [org.seedstack.seed.ws]
-endpoints = ProductInfoWS
+endpoints = ProductInfoWS, HelloService
 endpoint.ProductInfoWS.implementation = org.seedstack.showcase.ws.productinfo.ProductInfoServiceWebImpl
 endpoint.ProductInfoWS.wsdl = ProductInfoWS.wsdl
 endpoint.ProductInfoWS.url = /ws/productInfo
 endpoint.ProductInfoWS.enable-mtom = true
 
+endpoint.HelloService.implementation = org.seedstack.showcase.ws.hello.HelloService
+endpoint.HelloService.wsdl = Hello.wsdl
+endpoint.HelloService.binding = http://www.w3.org/2010/soapjms/
+#### TODO URL JNDI --> ressource =  jms/HelloQueue ####
+endpoint.HelloService.url = 
+#endpoint.HelloService.jms.user = 
+#endpoint.HelloService.jms.password = 
+endpoint.HelloService.jms.pooling = true
+endpoint.HelloService.jms.set-client-id = false 
+
 [ws.security]
 usernametoken.username = ws-username 
 usernametoken.password = ws-password
+
+

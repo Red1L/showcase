@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (c) 2013-2015 by The SeedStack authors. All rights reserved.
+
+    This file is part of SeedStack, An enterprise-oriented full development stack.
+
+    This Source Code Form is subject to the terms of the Mozilla Public
+    License, v. 2.0. If a copy of the MPL was not distributed with this
+    file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+-->
+<wsdl:definitions
+        xmlns="http://schemas.xmlsoap.org/wsdl/"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+        targetNamespace="http://seedstack.org/wsdl/seed/hello/"
+        xmlns:tns="http://seedstack.org/wsdl/seed/hello/"
+        name="HelloService">
+    <wsdl:types></wsdl:types>
+    <wsdl:message name="sayHello">
+        <wsdl:part name="hello" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="sayHelloResponse">
+        <wsdl:part name="return" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:portType name="Hello">
+        <wsdl:operation name="sayHello">
+            <wsdl:input message="tns:sayHello"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="HelloServicePortBinding" type="tns:Hello">
+        <soap:binding style="rpc"   transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="sayHello">
+            <soap:operation soapAction=""/>
+            <wsdl:input>
+                <soap:body
+                        namespace="http://seedstack.org/wsdl/seed/hello/"
+                        use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body
+                        namespace="http://seedstack.org/wsdl/seed/hello/"
+                        use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="HelloService">
+        <wsdl:port name="HelloServicePort" binding="tns:HelloServicePortBinding">
+            <wsdl:documentation>Hello World</wsdl:documentation>
+            <soap:address location="http://localhost:8080/ws/hello"></soap:address>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
