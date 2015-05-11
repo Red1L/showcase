@@ -27,11 +27,12 @@
     </wsdl:message>
     <wsdl:portType name="Hello">
         <wsdl:operation name="sayHello">
-            <wsdl:input message="tns:sayHello"/>
+            <wsdl:input message="tns:sayHello"/>
+
         </wsdl:operation>
     </wsdl:portType>
     <wsdl:binding name="HelloServicePortBinding" type="tns:Hello">
-        <soap:binding style="rpc"   transport="http://schemas.xmlsoap.org/soap/http"/>
+        <soap:binding style="rpc"   transport="http://www.w3.org/2010/soapjms/"/>
         <wsdl:operation name="sayHello">
             <soap:operation soapAction=""/>
             <wsdl:input>
@@ -39,11 +40,6 @@
                         namespace="http://seedstack.org/wsdl/seed/hello/"
                         use="literal"/>
             </wsdl:input>
-            <wsdl:output>
-                <soap:body
-                        namespace="http://seedstack.org/wsdl/seed/hello/"
-                        use="literal"/>
-            </wsdl:output>
         </wsdl:operation>
     </wsdl:binding>
     <wsdl:service name="HelloService">

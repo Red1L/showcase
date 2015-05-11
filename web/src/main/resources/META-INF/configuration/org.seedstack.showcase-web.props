@@ -14,6 +14,23 @@
 [org.seedstack.seed.security.urls]
 /** = authcBasic
 
+[org.seedstack.seed.jms]
+connection-factories = cf1
+connections = c1
+
+[org.seedstack.seed.jms.connection-factory.cf1]
+vendor.class = com.ibm.mq.jms.MQConnectionFactory
+vendor.property.queueManager = YVASA960A
+vendor.property.hostName = yvasa960.inetpsa.com
+vendor.property.channel = YVASA960A.MQMON.CLNT
+vendor.property.port = 1414
+vendor.property.transportType = 1
+
+[org.seedstack.seed.jms.connection.c1]
+connection-factory = cf1
+managed-connection = true
+polling = true
+
 ####################################################################
 # web-services
 ####################################################################
@@ -27,15 +44,6 @@ endpoint.ProductInfoWS.enable-mtom = true
 endpoint.HelloService.implementation = org.seedstack.showcase.ws.hello.HelloService
 endpoint.HelloService.wsdl = Hello.wsdl
 endpoint.HelloService.binding = http://www.w3.org/2010/soapjms/
-#### TODO URL JNDI --> ressource =  jms/HelloQueue ####
-endpoint.HelloService.url = 
-#endpoint.HelloService.jms.user = 
-#endpoint.HelloService.jms.password = 
-endpoint.HelloService.jms.pooling = true
-endpoint.HelloService.jms.set-client-id = false 
-
-[ws.security]
-usernametoken.username = ws-username 
-usernametoken.password = ws-password
+endpoint.HelloService.url = jms:queue:TEST_QUEUE.1?connectionName=c1
 
 

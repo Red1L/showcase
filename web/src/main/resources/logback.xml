@@ -10,29 +10,29 @@
     file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 -->
-<!-- <configuration> -->
-<!--     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender"> -->
-<!--         <encoder> -->
-<!--             <pattern>%-5level %d{ISO8601} %thread %logger{15} - %msg%n%rEx</pattern> -->
-<!--         </encoder> -->
-<!--     </appender> -->
-<!--     <root level="INFO"> -->
-<!--         <appender-ref ref="STDOUT" /> -->
-<!--     </root> -->
-<!-- </configuration> -->
+ <configuration>
+     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+         <encoder>
+             <pattern>%-5level %d{ISO8601} %thread %logger{15} - %msg%n%rEx</pattern>
+         </encoder>
+     </appender>
+     <root level="DEBUG">
+         <appender-ref ref="STDOUT" />
+     </root>
+ </configuration>
 
-<configuration>
-	<appender name="SHOWCASE" class="ch.qos.logback.core.FileAppender">
-		<file>/users/fnd00/was80/logs/seed_showcase.log</file>
-		<encoder>
-			<pattern>[%d] %-5level [%class{50} : %L] - %msg%n
-			</pattern>
-		</encoder>
-	</appender>
-	<logger name="SHOWCASE_LOGGER" additivity="false" level="DEBUG">
-		<appender-ref ref="SHOWCASE" />
-	</logger>
-    <root level="DEBUG">
-        <appender-ref ref="SHOWCASE" />
-    </root>
-</configuration>
+<!--<configuration>-->
+	<!--<appender name="SHOWCASE" class="ch.qos.logback.core.FileAppender">-->
+		<!--<file>/users/fnd00/was80/logs/seed_showcase.log</file>-->
+		<!--<encoder>-->
+			<!--<pattern>[%d] %-5level [%class{50} : %L] - %msg%n-->
+			<!--</pattern>-->
+		<!--</encoder>-->
+	<!--</appender>-->
+	<!--<logger name="SHOWCASE_LOGGER" additivity="false" level="DEBUG">-->
+		<!--<appender-ref ref="SHOWCASE" />-->
+	<!--</logger>-->
+    <!--<root level="DEBUG">-->
+        <!--<appender-ref ref="SHOWCASE" />-->
+    <!--</root>-->
+<!--</configuration>-->

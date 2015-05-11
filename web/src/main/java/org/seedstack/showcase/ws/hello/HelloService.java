@@ -9,25 +9,20 @@
  */
 package org.seedstack.showcase.ws.hello;
 
-import javax.jws.WebService;
-import javax.xml.ws.BindingType;
-
 import org.seedstack.ws.hello.Hello;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.sun.xml.ws.developer.SchemaValidation;
+import javax.jws.WebService;
 
 @WebService(endpointInterface = "org.seedstack.ws.hello.Hello", targetNamespace = "http://seedstack.org/wsdl/seed/hello/", serviceName = "HelloService", portName = "HelloServicePort")
-@SchemaValidation
-@BindingType("http://www.w3.org/2010/soapjms/")
-public class HelloService implements Hello{
+public class HelloService implements Hello {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(HelloService.class);
-	
-	@Override
-	public void sayHello(String hello) {
-		LOGGER.error("==================    "+ hello +"    ==================");
-	}
+    private static final Logger LOGGER = LoggerFactory.getLogger(HelloService.class);
+
+    @Override
+    public void sayHello(String hello) {
+        LOGGER.error("==================    " + hello + "    ==================");
+    }
 
 }
