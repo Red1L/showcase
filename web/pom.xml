@@ -68,13 +68,7 @@
         <dependency>
             <groupId>org.seedstack.samples</groupId>
             <artifactId>showcase-app</artifactId>
-            <version>${project.version}</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>xml-apis</artifactId>
-					<groupId>xml-apis</groupId>
-				</exclusion>
-			</exclusions>            
+            <version>${project.version}</version>         
         </dependency>
         <dependency>
 			<groupId>org.seedstack</groupId>
@@ -135,11 +129,18 @@
             <scope>test</scope>
         </dependency>
 
+		<!-- Server API -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		
 		<!-- JMS -->
 		<dependency>
 			<groupId>javax.jms</groupId>
 			<artifactId>jms</artifactId>
-			<version>1.1</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<!-- WMQ -->

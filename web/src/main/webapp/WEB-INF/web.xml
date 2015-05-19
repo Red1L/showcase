@@ -22,7 +22,10 @@
         <filter-name>guiceFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-
+	<listener>
+		<description>Context Listener</description>
+		<listener-class>org.seedstack.showcase.configuration.HibernateContextListener</listener-class>
+	</listener>
     <listener>
         <listener-class>org.seedstack.seed.web.SeedServletContextListener</listener-class>
     </listener>
@@ -34,7 +37,20 @@
 <!-- 		<res-auth>Container</res-auth> -->
 <!-- 		<res-sharing-scope>Shareable</res-sharing-scope> -->
 <!-- 	</resource-ref> -->
-	
+
+	<!-- JMS MQ -->
+	<resource-ref id="ConnectionFactory">
+         <description>Topic Connection Factory</description>
+         <res-ref-name>jms/ShowcaseConnectionFactory</res-ref-name>
+         <res-type>javax.jms.QueueConnectionFactory</res-type>
+         <res-auth>Container</res-auth>
+    </resource-ref>
+    <resource-ref id="Queue">
+        <description>Queue</description>
+        <res-ref-name>jms/HelloQueue</res-ref-name>
+        <res-type>javax.jms.Queue</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
 </web-app>
 
 

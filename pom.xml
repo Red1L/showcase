@@ -26,7 +26,7 @@
 
     <properties>
         <ecommerce-domain.version>2.0.0-M2-SNAPSHOT</ecommerce-domain.version>
-        <seedstack-distribution.version>15.4-M2-SNAPSHOT</seedstack-distribution.version>
+        <seedstack-distribution.version>15.7-M3-SNAPSHOT</seedstack-distribution.version>
         <javadoc.doclint.none/>
     </properties>
 
@@ -102,6 +102,21 @@
 
     <dependencyManagement>
         <dependencies>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>4.2.17.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+             <version>4.2.17.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-c3p0</artifactId>
+             <version>4.2.17.Final</version>
+        </dependency>        
             <dependency>
                 <groupId>org.seedstack</groupId>
                 <artifactId>seedstack-bom</artifactId>
